@@ -37,7 +37,13 @@ public enum TuVi {
     AM("Âm"),
 
     NAM("Nam"),
-    NU("Nữ");
+    NU("Nữ"),
+
+    KIM("Kim"),
+    MOC("Mộc"),
+    THUY("Thuỷ"),
+    HOA("Hoả"),
+    THO("Thổ");
 
 
 

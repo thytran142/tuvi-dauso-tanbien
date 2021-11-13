@@ -24,7 +24,7 @@ public class Main {
         int hour = scanner.nextInt();
         System.out.println("Nhập phút sinh (0m -> 60m");
         int minute = scanner.nextInt();
-        double hourOfBirth = hour + (minute/60);
+        double hourOfBirth = ((double) minute) / 60 + (double)hour;
         User user = buildUser(fullname, yearOfBirth, monthOfBirth, dayOfBirth, hourOfBirth, gender);
         System.out.println(user.toString());
     }
