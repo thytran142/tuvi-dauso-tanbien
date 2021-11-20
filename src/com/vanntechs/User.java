@@ -7,11 +7,10 @@ public class User {
     private int yearOfBirth;
     private String can;
     private String chi;
-    private String chiOfMonth;
-    private String canOfMonth;
     private String hourOfBirth;
     private String tuoiAmHayDuong;
     private String gender;
+    private String menh;
 
     public String getName() {
         return name;
@@ -61,22 +60,6 @@ public class User {
         this.chi = chi;
     }
 
-    public String getChiOfMonth() {
-        return chiOfMonth;
-    }
-
-    public void setChiOfMonth(String chiOfMonth) {
-        this.chiOfMonth = chiOfMonth;
-    }
-
-    public String getCanOfMonth() {
-        return canOfMonth;
-    }
-
-    public void setCanOfMonth(String canOfMonth) {
-        this.canOfMonth = canOfMonth;
-    }
-
     public String getHourOfBirth() {
         return hourOfBirth;
     }
@@ -101,6 +84,14 @@ public class User {
         this.gender = gender;
     }
 
+    public String getMenh() {
+        return menh;
+    }
+
+    public void setMenh(String menh) {
+        this.menh = menh;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -110,11 +101,10 @@ public class User {
                 ", yearOfBirth=" + yearOfBirth +
                 ", can='" + can + '\'' +
                 ", chi='" + chi + '\'' +
-                ", chiOfMonth='" + chiOfMonth + '\'' +
-                ", canOfMonth='" + canOfMonth + '\'' +
                 ", hourOfBirth='" + hourOfBirth + '\'' +
                 ", tuoiAmHayDuong='" + tuoiAmHayDuong + '\'' +
                 ", gender='" + gender + '\'' +
+                ", menh='" + menh + '\'' +
                 '}';
     }
 }

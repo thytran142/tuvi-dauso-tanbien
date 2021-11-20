@@ -43,7 +43,9 @@ public enum TuVi {
     MOC("Mộc"),
     THUY("Thuỷ"),
     HOA("Hoả"),
-    THO("Thổ");
+    THO("Thổ"),
+
+    MENH("Mệnh");
 
 
 
