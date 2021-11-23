@@ -6,54 +6,47 @@ import java.util.List;
 
 public class TuviDriver {
 
-    private HashMap<String, Cung> cungs = new HashMap<>();
-    private HashMap<String, Integer> canValues = new HashMap<>();
-    private HashMap<String, Integer> chiValues = new HashMap<>();
-    private HashMap<Integer, String> menhValues = new HashMap<>();
+    private HashMap<TuVi, Cung> cungs = new HashMap<>();
+    private HashMap<TuVi, Integer> canValues = new HashMap<>();
+    private HashMap<TuVi, Integer> chiValues = new HashMap<>();
+    private HashMap<Integer, TuVi> menhValues = new HashMap<>();
     private User user;
+    private List<TuVi> congiaps = Arrays.asList(TuVi.TI, TuVi.SUU, TuVi.DAN, TuVi.MEO, TuVi.THIN,
+            TuVi.TY, TuVi.NGO, TuVi.MUI, TuVi.THAN, TuVi.DAU, TuVi.TUAT, TuVi.HOI);
 
     public TuviDriver() {
-        this.cungs.put(TuVi.TI.toString(), new Cung());
-        this.cungs.put(TuVi.SUU.toString(), new Cung());
-        this.cungs.put(TuVi.DAN.toString(), new Cung());
-        this.cungs.put(TuVi.MEO.toString(), new Cung());
-        this.cungs.put(TuVi.THIN.toString(), new Cung());
-        this.cungs.put(TuVi.TY.toString(), new Cung());
-        this.cungs.put(TuVi.NGO.toString(), new Cung());
-        this.cungs.put(TuVi.MUI.toString(), new Cung());
-        this.cungs.put(TuVi.THAN.toString(), new Cung());
-        this.cungs.put(TuVi.DAU.toString(), new Cung());
-        this.cungs.put(TuVi.TUAT.toString(), new Cung());
-        this.cungs.put(TuVi.HOI.toString(), new Cung());
-        this.canValues.put(TuVi.GIAP.toString(), 1);
-        this.canValues.put(TuVi.AT.toString(), 1);
-        this.canValues.put(TuVi.BINH.toString(), 2);
-        this.canValues.put(TuVi.DINH.toString(), 2);
-        this.canValues.put(TuVi.MAU.toString(), 3);
-        this.canValues.put(TuVi.KY.toString(), 3);
-        this.canValues.put(TuVi.CANH.toString(), 4);
-        this.canValues.put(TuVi.TAN.toString(), 4);
-        this.canValues.put(TuVi.NHAM.toString(), 5);
-        this.canValues.put(TuVi.QUY.toString(), 5);
+        for (TuVi tuvi: congiaps) {
+            this.cungs.put(tuvi, new Cung());
+        }
+        this.canValues.put(TuVi.GIAP, 1);
+        this.canValues.put(TuVi.AT, 1);
+        this.canValues.put(TuVi.BINH, 2);
+        this.canValues.put(TuVi.DINH, 2);
+        this.canValues.put(TuVi.MAU, 3);
+        this.canValues.put(TuVi.KY, 3);
+        this.canValues.put(TuVi.CANH, 4);
+        this.canValues.put(TuVi.TAN, 4);
+        this.canValues.put(TuVi.NHAM, 5);
+        this.canValues.put(TuVi.QUY, 5);
 
-        this.chiValues.put(TuVi.TI.toString(), 0);
-        this.chiValues.put(TuVi.SUU.toString(), 0);
-        this.chiValues.put(TuVi.NGO.toString(), 0);
-        this.chiValues.put(TuVi.MUI.toString(), 0);
-        this.chiValues.put(TuVi.DAN.toString(), 1);
-        this.chiValues.put(TuVi.MEO.toString(), 1);
-        this.chiValues.put(TuVi.THAN.toString(), 1);
-        this.chiValues.put(TuVi.DAU.toString(), 1);
-        this.chiValues.put(TuVi.THIN.toString(), 2);
-        this.chiValues.put(TuVi.TY.toString(), 2);
-        this.chiValues.put(TuVi.TUAT.toString(), 2);
-        this.chiValues.put(TuVi.HOI.toString(), 2);
+        this.chiValues.put(TuVi.TI, 0);
+        this.chiValues.put(TuVi.SUU, 0);
+        this.chiValues.put(TuVi.NGO, 0);
+        this.chiValues.put(TuVi.MUI, 0);
+        this.chiValues.put(TuVi.DAN, 1);
+        this.chiValues.put(TuVi.MEO, 1);
+        this.chiValues.put(TuVi.THAN, 1);
+        this.chiValues.put(TuVi.DAU, 1);
+        this.chiValues.put(TuVi.THIN, 2);
+        this.chiValues.put(TuVi.TY, 2);
+        this.chiValues.put(TuVi.TUAT, 2);
+        this.chiValues.put(TuVi.HOI, 2);
 
-        this.menhValues.put(1, TuVi.KIM.toString());
-        this.menhValues.put(2, TuVi.THUY.toString());
-        this.menhValues.put(3, TuVi.HOA.toString());
-        this.menhValues.put(4, TuVi.THO.toString());
-        this.menhValues.put(5, TuVi.MOC.toString());
+        this.menhValues.put(1, TuVi.KIM);
+        this.menhValues.put(2, TuVi.THUY);
+        this.menhValues.put(3, TuVi.HOA);
+        this.menhValues.put(4, TuVi.THO);
+        this.menhValues.put(5, TuVi.MOC);
 
         this.user = new User();
     }
@@ -71,21 +64,18 @@ public class TuviDriver {
         this.user.setCan(DuongLichAmLichUtility.defineCanOfYear(user.getYearOfBirth()));
         this.user.setChi(DuongLichAmLichUtility.defineChi(user.getYearOfBirth()));
         this.user.setHourOfBirth(DuongLichAmLichUtility.defineLunarHour(hourOfBirth));
-        this.user.setTuoiAmHayDuong(DuongLichAmLichUtility.tuoiAmHayDuong(user.getCan()));
+        this.user.setTuoiAmHayDuong(DuongLichAmLichUtility.tuoiAmHayDuong(user.getCan().toString()));
         int menhInt = this.canValues.get(this.user.getCan()) + this.chiValues.get(this.user.getChi());
         if (menhInt > 5) {
             menhInt = menhInt - 5;
         }
-        this.user.setMenh(this.menhValues.get(menhInt));
+        this.user.setMenh(this.menhValues.get(menhInt).toString());
     }
 
     public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public void setCungMenhAndThan() {
         HashMap<Integer, List<TuVi>> menhMaps = new HashMap<>();
@@ -143,21 +133,55 @@ public class TuviDriver {
         }
     }
     private void setCungMenh(TuVi position) {
-        this.cungs.get(position.toString()).setName(TuVi.MENH.toString());
-        System.out.println("Cung menh: " + position.toString());
+        this.cungs.get(position).setName(TuVi.MENH.toString());
+        System.out.println("Cung mệnh: " + position.toString());
     }
     private void setCungThan(TuVi position) {
-        this.cungs.get(position.toString()).setThanMenhDongCung(true);
-        System.out.println("Cung Than " + position.toString());
+        this.cungs.get(position).setThanMenhDongCung(true);
+        System.out.println("Cung thân: " + position.toString());
     }
     private boolean isGioSinhMatched(int index) {
-        List<TuVi> list = Arrays.asList(TuVi.TI, TuVi.SUU, TuVi.DAN, TuVi.MEO, TuVi.THIN,
-                TuVi.TY, TuVi.NGO, TuVi.MUI, TuVi.THAN, TuVi.DAU, TuVi.TUAT, TuVi.HOI);
-        for(int i = 0; i < list.size(); i++) {
-            if (this.user.getHourOfBirth().equals(list.get(i).toString())) {
+        for(int i = 0; i < congiaps.size(); i++) {
+            if (this.user.getHourOfBirth().equals(congiaps.get(i).toString())) {
                 return index == i;
             }
         }
         return false;
+    }
+    private TuVi findPositionOfCungByName(String name) {
+        for (TuVi key: this.cungs.keySet()) {
+            Cung cung = this.cungs.get(key);
+            if (null != cung.getName() && cung.getName().equals(name)) {
+                return key;
+            }
+        }
+        return null;
+    }
+    private int findIndexByClockWise(TuVi currentPosition, int byManyPositions) {
+        int index = -1;
+        for (int i = 0; i < this.congiaps.size(); i++) {
+            TuVi currentCongiap = this.congiaps.get(i);
+            if (currentCongiap == currentPosition) {
+                index = i;
+                break;
+            }
+        }
+        if (index == -1) {
+            throw new RuntimeException("Cannot get the current index of a current position " + currentPosition.toString());
+        }
+        int indexClockWise = index + byManyPositions;
+        if (indexClockWise >= this.congiaps.size()) {
+            indexClockWise -= this.congiaps.size();
+        }
+        return indexClockWise;
+    }
+    public void setCungPhuMau() {
+        TuVi positionOfCungMenh = findPositionOfCungByName(TuVi.MENH.toString());
+        if (positionOfCungMenh == null) {
+            throw new RuntimeException("Cannot find cung menh!");
+        }
+        int indexOfCungPhuMau = findIndexByClockWise(positionOfCungMenh, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungPhuMau)).setName(TuVi.PHU_MAU.toString());
+        System.out.println("Cung phụ mẫu: " + this.congiaps.get(indexOfCungPhuMau).toString());
     }
 }

@@ -5,8 +5,8 @@ public class User {
     private int dayOfBirth;
     private int monthOfBirth;
     private int yearOfBirth;
-    private String can;
-    private String chi;
+    private TuVi can;
+    private TuVi chi;
     private String hourOfBirth;
     private String tuoiAmHayDuong;
     private String gender;
@@ -44,19 +44,19 @@ public class User {
         this.yearOfBirth = yearOfBirth;
     }
 
-    public String getCan() {
+    public TuVi getCan() {
         return can;
     }
 
-    public void setCan(String can) {
+    public void setCan(TuVi can) {
         this.can = can;
     }
 
-    public String getChi() {
+    public TuVi getChi() {
         return chi;
     }
 
-    public void setChi(String chi) {
+    public void setChi(TuVi chi) {
         this.chi = chi;
     }
 
@@ -99,8 +99,8 @@ public class User {
                 ", dayOfBirth=" + dayOfBirth +
                 ", monthOfBirth=" + monthOfBirth +
                 ", yearOfBirth=" + yearOfBirth +
-                ", can='" + can + '\'' +
-                ", chi='" + chi + '\'' +
+                ", can='" + can.toString() + '\'' +
+                ", chi='" + chi.toString() + '\'' +
                 ", hourOfBirth='" + hourOfBirth + '\'' +
                 ", tuoiAmHayDuong='" + tuoiAmHayDuong + '\'' +
                 ", gender='" + gender + '\'' +

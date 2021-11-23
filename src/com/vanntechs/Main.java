@@ -29,6 +29,7 @@ public class Main {
 
         tuviDriver.buildUser(fullname, yearOfBirth, monthOfBirth, dayOfBirth, hourOfBirth, gender);
         tuviDriver.setCungMenhAndThan();
+        tuviDriver.setCungPhuMau();
         System.out.println(tuviDriver.getUser().toString());
     }
 

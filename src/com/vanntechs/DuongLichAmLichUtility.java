@@ -1,5 +1,7 @@
 package com.vanntechs;
 
+import java.util.Calendar;
+
 import static java.lang.Math.PI;
 
 public class DuongLichAmLichUtility {
@@ -279,81 +281,82 @@ public class DuongLichAmLichUtility {
         return "";
     }
 
-    public static String defineCanOfYear(int y) {
-        String can = "";
+    public static TuVi defineCanOfYear(int y) {
+        TuVi can = null;
         switch (y % 10) {
             case 0:
-                can = TuVi.CANH.toString();
+                can = TuVi.CANH;
                 break;
             case 1:
-                can = TuVi.TAN.toString();
+                can = TuVi.TAN;
                 break;
             case 2:
-                can = TuVi.NHAM.toString();
+                can = TuVi.NHAM;
                 break;
             case 3:
-                can = TuVi.QUY.toString();
+                can = TuVi.QUY;
                 break;
             case 4:
-                can = TuVi.GIAP.toString();
+                can = TuVi.GIAP;
                 break;
             case 5:
-                can = TuVi.AT.toString();
+                can = TuVi.AT;
                 break;
             case 6:
-                can = TuVi.BINH.toString();
+                can = TuVi.BINH;
                 break;
             case 7:
-                can = TuVi.DINH.toString();
+                can = TuVi.DINH;
                 break;
             case 8:
-                can = TuVi.MAU.toString();
+                can = TuVi.MAU;
                 break;
             case 9:
-                can = TuVi.KY.toString();
+                can = TuVi.KY;
                 break;
         }
         return can;
     }
 
-    public static String defineChi(int year) {
-        String chi = "";
-        switch (year % 12) {
+    public static TuVi defineChi(int year) {
+        int lastTwoDigits = Integer.parseInt(Integer.toString(year).substring(2));
+        TuVi chi = null;
+        switch (lastTwoDigits % 12) {
             case 0:
-                chi = TuVi.THAN.toString();
+                chi = TuVi.TI;
                 break;
             case 1:
-                chi = TuVi.DAU.toString();
+                chi = TuVi.SUU;
                 break;
             case 2:
-                chi = TuVi.TUAT.toString();
+                chi = TuVi.DAN;
                 break;
             case 3:
-                chi = TuVi.HOI.toString();
+                chi = TuVi.MEO;
                 break;
             case 4:
-                chi = TuVi.TY.toString();
+                chi = TuVi.THIN;
                 break;
             case 5:
-                chi = TuVi.SUU.toString();
+                chi = TuVi.TY;
                 break;
             case 6:
-                chi = TuVi.DAU.toString();
+                chi = TuVi.NGO;
                 break;
             case 7:
-                chi = TuVi.MEO.toString();
+                chi = TuVi.MUI;
                 break;
             case 8:
-                chi = TuVi.THIN.toString();
+                chi = TuVi.THAN;
                 break;
             case 9:
-                chi = TuVi.TY.toString();
+                chi = TuVi.DAU;
                 break;
             case 10:
-                chi = TuVi.NGO.toString();
+                chi = TuVi.TUAT;
                 break;
             case 11:
-                chi = TuVi.MUI.toString();
+                chi = TuVi.HOI;
                 break;
         }
         return chi;
