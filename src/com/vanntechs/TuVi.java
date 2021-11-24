@@ -46,7 +46,17 @@ public enum TuVi {
     THO("Thổ"),
 
     MENH("Mệnh"),
-    PHU_MAU("Phụ mẫu");
+    PHU_MAU("Phụ mẫu"),
+    PHUC_DUC("Phúc đức"),
+    DIEN_TRACH("Điền trạch"),
+    QUAN_LOC("Quan lộc"),
+    NO_BOC("Nô bộc"),
+    THIEN_DI("Thiên di"),
+    TAT_ACH("Tật ách"),
+    TAI_BACH("Tài bạch"),
+    TU_TUC("Tử tức"),
+    PHU_THE("Phu thê"),
+    HUYNH_DE("Huynh đệ");
 
 
 

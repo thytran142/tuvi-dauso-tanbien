@@ -184,4 +184,94 @@ public class TuviDriver {
         this.cungs.get(this.congiaps.get(indexOfCungPhuMau)).setName(TuVi.PHU_MAU.toString());
         System.out.println("Cung phụ mẫu: " + this.congiaps.get(indexOfCungPhuMau).toString());
     }
+    public void setCungPhucDuc() {
+        TuVi positionOfCungPhuMau = findPositionOfCungByName(TuVi.PHU_MAU.toString());
+        if (positionOfCungPhuMau == null) {
+            throw new RuntimeException("Cannot find cung phu mau!");
+        }
+        int indexOfCungPhucDuc = findIndexByClockWise(positionOfCungPhuMau, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungPhucDuc)).setName(TuVi.PHUC_DUC.toString());
+        System.out.println("Cung phúc đức: " + this.congiaps.get(indexOfCungPhucDuc).toString());
+    }
+    public void setCungDienTrach() {
+        TuVi positionOfCungPhucDuc = findPositionOfCungByName(TuVi.PHUC_DUC.toString());
+        if (positionOfCungPhucDuc == null) {
+            throw new RuntimeException("Cannot find cung Phuc duc!");
+        }
+        int indexOfCungDienTrach = findIndexByClockWise(positionOfCungPhucDuc, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungDienTrach)).setName(TuVi.DIEN_TRACH.toString());
+        System.out.println("Cung điền trạch: " + this.congiaps.get(indexOfCungDienTrach).toString());
+    }
+    public void setCungQuanLoc() {
+        TuVi positionOfCungDienTrach = findPositionOfCungByName(TuVi.DIEN_TRACH.toString());
+        if (positionOfCungDienTrach == null) {
+            throw new RuntimeException("Cannot find cung Dien trach!");
+        }
+        int indexOfCungQuanLoc = findIndexByClockWise(positionOfCungDienTrach, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungQuanLoc)).setName(TuVi.QUAN_LOC.toString());
+        System.out.println("Cung quan lộc: " + this.congiaps.get(indexOfCungQuanLoc).toString());
+    }
+    public void setCungNoBoc() {
+        TuVi positionOfCungQuanLoc = findPositionOfCungByName(TuVi.QUAN_LOC.toString());
+        if (positionOfCungQuanLoc == null) {
+            throw new RuntimeException("Cannot find cung Quan loc!");
+        }
+        int indexOfCungNoBoc = findIndexByClockWise(positionOfCungQuanLoc, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungNoBoc)).setName(TuVi.NO_BOC.toString());
+        System.out.println("Cung nô bộc: " + this.congiaps.get(indexOfCungNoBoc).toString());
+    }
+    public void setCungThienDi() {
+        TuVi positionOfCungNoBoc = findPositionOfCungByName(TuVi.NO_BOC.toString());
+        if (positionOfCungNoBoc == null) {
+            throw new RuntimeException("Cannot find cung Thien Di!");
+        }
+        int indexOfCungThienDi = findIndexByClockWise(positionOfCungNoBoc, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungThienDi)).setName(TuVi.THIEN_DI.toString());
+        System.out.println("Cung thiên di: " + this.congiaps.get(indexOfCungThienDi).toString());
+    }
+    public void setCungTatAch() {
+        TuVi positionOfCungThienDi = findPositionOfCungByName(TuVi.THIEN_DI.toString());
+        if (positionOfCungThienDi == null) {
+            throw new RuntimeException("Cannot find cung Tat ach!");
+        }
+        int indexOfCungTatAch = findIndexByClockWise(positionOfCungThienDi, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungTatAch)).setName(TuVi.TAT_ACH.toString());
+        System.out.println("Cung tật ách: " + this.congiaps.get(indexOfCungTatAch).toString());
+    }
+    public void setCungTaibach() {
+        TuVi positionOfCungTatAch = findPositionOfCungByName(TuVi.TAT_ACH.toString());
+        if (positionOfCungTatAch == null) {
+            throw new RuntimeException("Cannot find cung tai bach!");
+        }
+        int indexOfCungTaiBach = findIndexByClockWise(positionOfCungTatAch, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungTaiBach)).setName(TuVi.TAI_BACH.toString());
+        System.out.println(TuVi.TAI_BACH + ": " + this.congiaps.get(indexOfCungTaiBach).toString());
+    }
+    public void setCungTuTuc() {
+        TuVi positionOfCungTaiBach = findPositionOfCungByName(TuVi.TAI_BACH.toString());
+        if (positionOfCungTaiBach == null) {
+            throw new RuntimeException("Cannot find cung tai bach!");
+        }
+        int indexOfCungTuTuc = findIndexByClockWise(positionOfCungTaiBach, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungTuTuc)).setName(TuVi.TU_TUC.toString());
+        System.out.println(TuVi.TU_TUC + ":" + this.congiaps.get(indexOfCungTuTuc).toString());
+    }
+    public void setCungPhuThe() {
+        TuVi positionOfCungTuTuc = findPositionOfCungByName(TuVi.TU_TUC.toString());
+        if (positionOfCungTuTuc == null) {
+            throw new RuntimeException("Cannot find cung tu tuc!");
+        }
+        int indexOfCungPhuThe = findIndexByClockWise(positionOfCungTuTuc, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungPhuThe)).setName(TuVi.PHU_THE.toString());
+        System.out.println(TuVi.PHU_THE + ":" + this.congiaps.get(indexOfCungPhuThe).toString());
+    }
+    public void setCungHuynhDe() {
+        TuVi positionOfCungPhuThe = findPositionOfCungByName(TuVi.PHU_THE.toString());
+        if (positionOfCungPhuThe == null) {
+            throw new RuntimeException("Cannot find cung phu the!");
+        }
+        int indexOfCungHuynhDe = findIndexByClockWise(positionOfCungPhuThe, 1);
+        this.cungs.get(this.congiaps.get(indexOfCungHuynhDe)).setName(TuVi.HUYNH_DE.toString());
+        System.out.println(TuVi.HUYNH_DE + ":" + this.congiaps.get(indexOfCungHuynhDe).toString());
+    }
 }

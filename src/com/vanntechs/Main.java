@@ -30,6 +30,18 @@ public class Main {
         tuviDriver.buildUser(fullname, yearOfBirth, monthOfBirth, dayOfBirth, hourOfBirth, gender);
         tuviDriver.setCungMenhAndThan();
         tuviDriver.setCungPhuMau();
+        tuviDriver.setCungPhucDuc();
+        tuviDriver.setCungDienTrach();
+        tuviDriver.setCungQuanLoc();
+        tuviDriver.setCungNoBoc();
+        tuviDriver.setCungThienDi();
+        tuviDriver.setCungTatAch();
+        tuviDriver.setCungTaibach();
+        tuviDriver.setCungTuTuc();
+        tuviDriver.setCungPhuThe();
+        tuviDriver.setCungHuynhDe();
+
+
         System.out.println(tuviDriver.getUser().toString());
     }
 
